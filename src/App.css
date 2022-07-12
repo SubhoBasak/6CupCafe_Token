@@ -1,14 +1,34 @@
 .token-canvas{
     height: 100vh;
-    background-color: #ddd;
+    background: url(./assets/images/bg5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .token-card{
+    position: relative;
     width: 96%;
-    height: 39vh;
+    height: 28vh;
     border-radius: 12px;
-    background-color: #fff;
-    box-shadow: 2px 3px 12px 5px #22222222;
+    border: 1px solid #aaaaaa50;
+    background-color: #66666650;
+    backdrop-filter: blur(15px);
+}
+.token-card p{
+    border-bottom: 1px solid #aaa;
     font-size: 9rem;
+    line-height: 10rem;
+    color: #fe1b45;
+}
+.token-canvas img{
+    position: absolute;
+    max-width: 128px;
+    max-height: 128px;
+    object-fit: scale-down;
+    border-radius: 64px;
+    overflow: hidden;
+    top: -10%;
+    right: -10%;
 }
 .nav-title-bar {
     background-color: #333;
