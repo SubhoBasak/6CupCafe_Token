@@ -1,6 +1,6 @@
 .token-canvas{
     height: 100vh;
-    background: url(./assets/images/bg5.jpg);
+    background: url(./assets/images/bg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,8 +27,9 @@
     object-fit: scale-down;
     border-radius: 64px;
     overflow: hidden;
-    top: -10%;
-    right: -10%;
+    top: -18%;
+    right: -13%;
+    z-index: 999999 !important;
 }
 .nav-title-bar {
     background-color: #333;

@@ -25,43 +25,27 @@ const Card = ({ token }) => {
 };
 
 function App() {
-  const [tokens, setTokens] = React.useState([
-    { token: 1 },
-    { token: 2 },
-    { token: 3 },
-    { token: 4 },
-    { token: 5 },
-    { token: 6 },
-    { token: 7 },
-    { token: 8 },
-    { token: 9 },
-  ]);
+  const [tokens, setTokens] = React.useState([]);
 
   setInterval(() => window.location.reload(), 10000);
 
   React.useEffect(() => {
-    // fetch(process.env.REACT_APP_BASE_URL + "/token/open", {
-    //   method: "GET",
-    // }).then((res) => {
-    //   if (res.status === 200) res.json().then((data) => setTokens(data));
-    //   else return alert("Something went wrong! Please try again.");
-    // });
+    fetch(process.env.REACT_APP_BASE_URL + "/token/open", {
+      method: "GET",
+    }).then((res) => {
+      if (res.status === 200) res.json().then((data) => setTokens(data));
+      else return alert("Something went wrong! Please try again.");
+    });
   }, []);
 
   return (
-    <>
-      {/* <div className="nav-title-bar d-flex align-items-center">
-        <img src={require("./assets/images/logo-light.png")} alt="logo" />
-        <p className="fs-4 text-light my-0 ms-3 fw-light">6 Cups Cafe</p>
-      </div> */}
-      <div className="token-canvas">
-        <Row className="p-3 w-100">
-          {tokens.map((data, index) => (
-            <Card key={index} token={data.token.toString().padStart(3, "0")} />
-          ))}
-        </Row>
-      </div>
-    </>
+    <div className="token-canvas">
+      <Row className="p-3 w-100">
+        {tokens.map((data, index) => (
+          <Card key={index} token={data.token.toString().padStart(3, "0")} />
+        ))}
+      </Row>
+    </div>
   );
 }
 
