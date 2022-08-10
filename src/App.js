@@ -27,7 +27,7 @@ const Card = ({ token }) => {
 function App() {
   const [tokens, setTokens] = React.useState([]);
 
-  setInterval(() => window.location.reload(), 10000);
+  setInterval(() => window.location.reload(), 5000);
 
   React.useEffect(() => {
     fetch(process.env.REACT_APP_BASE_URL + "/token/open", {
